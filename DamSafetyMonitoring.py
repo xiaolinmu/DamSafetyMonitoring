@@ -908,19 +908,10 @@ if __name__ == "__main__":
     isHeader_WaterTempt = 0
 
     path_UpLevel = r"C:\Users\gonhjian\Desktop\up.xlsx"
-    # path_DownLevel = r"C:\Users\gonhjian\Desktop\坝上水位.csv"
-    # path_AirTempt = r"C:\Users\gonhjian\Desktop\4水库大坝历史安全监测资料及整编资料标准化处理 - 副本\1环境量监测数据\气温.csv"
-    # path_RainFall = r"C:\Users\gonhjian\Desktop\4水库大坝历史安全监测资料及整编资料标准化处理 - 副本\1环境量监测数据\降雨量.csv"
     path_MonitPnt = r"C:\Users\gonhjian\Desktop\X22-1.xlsx"
-    # path_WaterTempt = r"C:\Users\gonhjian\Desktop\4水库大坝历史安全监测资料及整编资料标准化处理 - 副本\1环境量监测数据\水温.csv"
 
-    # path_UpLevel = r"C:\Users\gonhjian\Desktop\岳城.xlsx"
     isHeader_UpLevel = 1
-    # isHeader_DownLevel = 1
-    # isHeader_AirTempt = 1
-    # isHeader_RainFall = 1
     isHeader_MonitPnt = 1
-    # isHeader_WaterTempt = 1
 
     list_PathInput = [path_UpLevel, path_DownLevel, path_AirTempt, path_DamTempt, path_RainFall, path_MonitPnt, path_WaterTempt]
     list_isHeader = [isHeader_UpLevel, isHeader_DownLevel, isHeader_AirTempt, isHeader_DamTempt, isHeader_RainFall, isHeader_MonitPnt, isHeader_WaterTempt]
@@ -969,17 +960,13 @@ if __name__ == "__main__":
 
     data_All.generate_Factor(judge_GenerateFactor, order_UpLevel, height_DamBase, earlier_UpLevel, order_DownLevel, earlier_DownLevel, earlier_UpliftDamBase, earlier_UpliftDam, order_DeformAdjust, order_TemptHarmWare, param_ExpAging, param1_HyperAging, param2_HyperAging, order_AgingMulti, order_AgingHarmWare, eariler_RainFall, time_Start)
 
-    # print(pd.date_range(end="4/5/2018",periods=5))
-
     F1 = 2.01
     F2 = 2
     data_All.StepwiseRegression(F1, F2)
 
     data_All.CalaulateComponent()
 
-    # data_All.Figure_Output()
-
     path_Output = ''
-
+    
     path_Output = r"C:\Users\gonhjian\Desktop"
     data_All.ExcelFile_Output(path_Output)
